@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="{{ page_keywords }}">
+    <meta name="author" content="{{ page_author }}">
+    
+    <!-- Title -->
+    <title>{{ page_title }}</title>
+
+    {% csrf_token %}
+
+    <!-- Static-Files -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Main/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Main/content/site.css' %}" />
+    <script src="{% static 'Main/scripts/modernizr-2.6.2.js' %}"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'Main/img/icon/favicon.ico' %}"/>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="container">
+        {% include "Main/navbar.html" %}
+    </div>
+
+    <!-- Time -->
+    <div class="container">
+        <h2 id="time">Uhr nicht verfügbar!</h2>
+    </div>
+
+    <!-- Content -->
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-copyright text-center">
+            <p>&copy; {{ year }} - Andreas Heine</p>
+        </div> 
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{% static 'Main/scripts/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'Main/scripts/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Main/scripts/respond.min.js' %}"></script>
+    <script src="{% static 'Main/scripts/custom.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

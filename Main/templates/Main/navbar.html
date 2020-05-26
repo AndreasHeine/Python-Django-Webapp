@@ -1,0 +1,26 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="main">{{ page_title }}-App:</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="{{ main_nav_class }}"><a href="main">Main</a></li>
+                <li class="{{ about_nav_class }}"><a href="about">About</a></li>
+                <li><a href="blog">Blog</a></li>
+                <li><a href="news">News</a></li>
+                <li><a href="shop">Shop</a></li>
+                <li><a href="api">REST api</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="login"><span class="glyphicon glyphicon-user"></span > Login </a></li>
+                <li><a href="admin"><span class="glyphicon glyphicon-log-in"></span> Django-Admin </a></li>
+            </ul>
+        </div>
+    </div>
+</div>

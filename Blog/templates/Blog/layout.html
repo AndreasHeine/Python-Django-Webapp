@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="{{ page_keywords }}">
+    <meta name="author" content="{{ page_author }}">
+    
+    <!-- Title -->
+    <title>{{ page_title }}</title>
+
+    <!-- Static-Files -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Blog/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'Blog/content/site.css' %}" />
+    <script src="{% static 'Blog/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="container">
+        {% include "Blog/navbar.html" %}
+    </div>
+    
+    <!-- Content -->
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-copyright text-center">
+            <p>&copy; {{ year }} - Andreas Heine</p>
+        </div> 
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{% static 'Blog/scripts/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'Blog/scripts/bootstrap.min.js' %}"></script>
+    <script src="{% static 'Blog/scripts/respond.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
